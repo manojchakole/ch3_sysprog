@@ -19,7 +19,9 @@ int main()
 	printf("Enter non negative value for new fd2\n");
 	scanf("%d", &(fd2));
 
-	fd2 = customdup2(fd1, fd2);
+//	fd2 = customdup2(fd1, fd2);
+	fd2 = customfunctiondup2(fd1, fd2);
+
 	printf("The new non negative value for new fd2 %d\n", fd2);
 
 	return 0;
