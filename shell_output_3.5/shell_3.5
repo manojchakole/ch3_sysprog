@@ -1,0 +1,48 @@
+Since shell processes its command from left to right; Here are the outputs for the following cases :
+
+(1) ./a.out > outputfile 2>&1
+
+The output of the above a.out file will be redirected to the outputfile; And there will be no output on terminal (console).
+
+If source file does not contain error
+--> then the desired output will be redirected to the outfile;
+
+If source file contains error
+--> then source file will not be compiled successfully; 
+
+Linker error:
+the exe file will not be created for linker error and output will be redirected as "bash: ./a.out: No such file or directory" to the outfile.
+(if directory contains previous (a.out) exe then it will be deleted automatically).
+
+Syntax error:
+Since no compilation is done, this command gives same output file with previous data.
+
+Runtime errors:
+source file compiled successfully; 
+But for runtime errors, output will be not redirected to outputfile instead it will be displayed on terminal.
+
+Logical error:
+Since no compilation is done, this command gives same output file with previous data.
+
+Semantic error:
+Since no compilation is done, this command gives same output file with previous data.
+
+(2) ./a.out 2>&1 >outputfile
+
+The output is given by above command will be different compared to previous one.
+Here output from a.out file will be first redirected to terminal
+
+Linker error:
+the exe file will not be created for linker error and output will not be redirected to the file outfile and prints errorr on terminal as "bash: ./a.out: No such file or directory" to the outfile.
+(if directory contains exe previous then it will be deleted automatically).
+
+Runtime errors:
+source file compiled successfully; 
+But for runtime errors, output will be not redirected to outputfile instead it will be displayed on terminal.
+
+Logical error:
+Since no compilation is done, this command gives same output (of previous exe) file with previous data(it could be empty).
+
+Semantic error:
+Since no compilation is done, this command gives same output (of previous exe) file with previous data.
+(it could be empty).
